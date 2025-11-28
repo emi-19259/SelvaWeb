@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demostración de etiquetas HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #0077cc;
+    }
+    table, th, td {
+      border: 1px solid #333;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    figure {
+      text-align: center;
+    }
+    #carrusel img {
+      display: none;
+      width: 200px;
+    }
+    #carrusel img.active {
+      display: inline-block;
+    }
+    dialog {
+      border: 2px solid #444;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Zayd: nav, abbr, blockquote -->
+  <nav>
+    <a href="#info">Inicio</a>
+    <a href="#tabla">Tabla</a>
+    <a href="#multimedia">Multimedia</a>
+  </nav>
+  <p><abbr title="Lenguaje de Marcado de Hipertexto">HTML</abbr> es esencial para la web.</p>
+  <blockquote cite="https://developer.mozilla.org">
+    “El HTML es el esqueleto de la web.” — MDN Web Docs
+  </blockquote>
+
+  <!-- Carlos: section -->
+  <section id="info">
+    <h2>Información del Proyecto</h2>
+
+    <!-- Karol: dl, dt, dd -->
+    <dl>
+      <dt>Nombre</dt>
+      <dd>Exploración de etiquetas HTML</dd>
+      <dt>Autor</dt>
+      <dd>Emiliano y equipo</dd>
+    </dl>
+  </section>
+
+  <!-- Uziel: table, th, td -->
+  <section id="tabla">
+    <h2>Tabla de Participantes</h2>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Etiqueta</th>
+      </tr>
+      <tr><td>Emiliano</td><td>&lt;iframe&gt;</td></tr>
+      <tr><td>Carlos</td><td>&lt;section&gt;</td></tr>
+      <tr><td>Karol</td><td>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</td></tr>
+      <tr><td>Angel</td><td>&lt;optgroup&gt;</td></tr>
+      <tr><td>Uziel</td><td>&lt;table&gt;, &lt;th&gt;, &lt;td&gt;</td></tr>
+      <tr><td>Lissandro</td><td>&lt;iframe&gt;</td></tr>
+      <tr><td>Alejandro</td><td>&lt;dialog&gt;</td></tr>
+      <tr><td>Zayd</td><td>&lt;blockquote&gt;, &lt;abbr&gt;, &lt;nav&gt;</td></tr>
+      <tr><td>Fernanda</td><td>Carrusel</td></tr>
+      <tr><td>Marian</td><td>&lt;mark&gt;</td></tr>
+      <tr><td>Jimena</td><td>&lt;svg&gt;</td></tr>
+      <tr><td>Mauro</td><td>&lt;map&gt;</td></tr>
+      <tr><td>Itzel</td><td>&lt;canvas&gt;</td></tr>
+      <tr><td>Omar</td><td>&lt;figure&gt;, &lt;figcaption&gt;</td></tr>
+      <tr><td>Ulices</td><td>&lt;embed&gt;</td></tr>
+    </table>
+  </section>
+
+  <!-- Angel: optgroup -->
+  <label for="lenguajes">Lenguajes:</label>
+  <select id="lenguajes">
+    <optgroup label="Frontend">
+      <option>HTML</option>
+      <option>CSS</option>
+    </optgroup>
+    <optgroup label="Backend">
+      <option>PHP</option>
+      <option>Node.js</option>
+    </optgroup>
+  </select>
+
+  <!-- Alejandro: dialog -->
+  <dialog id="miDialogo">
+    <p>¡Hola! Este es un cuadro de diálogo.</p>
+    <button onclick="document.getElementById('miDialogo').close()">Cerrar</button>
+  </dialog>
+  <button onclick="document.getElementById('miDialogo').showModal()">Abrir diálogo</button>
+
+  <!-- Marian: mark -->
+  <p>Este es un <mark>texto resaltado</mark> para llamar la atención.</p>
+
+  <!-- Jimena: svg -->
+  <svg width="100" height="100">
+    <rect width="100" height="100" fill="orange" />
+    <circle cx="50" cy="50" r="30" fill="white" />
+  </svg>
+
+  <!-- Mauro: map -->
+  <img src="https://via.placeholder.com/300x100" usemap="#zonas" alt="Mapa">
+  <map name="zonas">
+    <area shape="rect" coords="0,0,100,100" href="#info" alt="Info">
+    <area shape="rect" coords="100,0,200,100" href="#tabla" alt="Tabla">
+  </map>
+
+  <!-- Itzel: canvas -->
+  <canvas id="miCanvas" width="200" height="100"></canvas>
+  <script>
+    const ctx = document.getElementById("miCanvas").getContext("2d");
+    ctx.fillStyle = "green";
+    ctx.fillRect(10, 10, 180, 80);
+  </script>
+
+  <!-- Omar: figure, figcaption -->
+  <figure>
+    <img src="https://via.placeholder.com/200" alt="Ejemplo">
+    <figcaption>Imagen de ejemplo con figcaption</figcaption>
+  </figure>
+
+  <!-- Emiliano y Lissandro: iframe -->
+  <h3>Contenido externo</h3>
+  <iframe src="https://es.wikipedia.org" width="300" height="200" title="Wikipedia"></iframe>
+
+  <!-- Ulices: embed -->
+  <h3>Documento embebido</h3>
+  <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" width="300" height="200" type="application/pdf">
+
+  <!-- Fernanda: carrusel -->
+  <section id="carrusel">
+    <h3>Carrusel de imágenes</h3>
+    <img src="https://via.placeholder.com/200x100?text=1" class="active">
+    <img src="https://via.placeholder.com/200x100?text=2">
+    <img src="https://via.placeholder.com/200x100?text=3">
+    <br>
+    <button onclick="cambiarImagen(-1)">Anterior</button>
+    <button onclick="cambiarImagen(1)">Siguiente</button>
+  </section>
+  <script>
+    let indice = 0;
+    const imagenes = document.querySelectorAll("#carrusel img");
+    function cambiarImagen(direccion) {
+      imagenes[indice].classList.remove("active");
+      indice = (indice + direccion + imagenes.length) % imagenes.length;
+      imagenes[indice].classList.add("active");
+    }
+  </script>
+  
+</body>
+</html>
